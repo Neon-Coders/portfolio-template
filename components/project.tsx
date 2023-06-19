@@ -1,10 +1,10 @@
+import Link from "next/link";
+import Image from "next/image";
+import Tilt from "react-parallax-tilt";
 import { DARK_COLORS, FOCUS_VISIBLE_OUTLINE } from "@/lib/colors";
 import { cn } from "@/lib/utils";
 import { MainProjectItem, Project } from "@/types";
 import { useHover } from "@react-aria/interactions";
-import Image from "next/image";
-import Link from "next/link";
-import Tilt from "react-parallax-tilt";
 import { RoughNotation } from "react-rough-notation";
 
 interface ProjectsProps {
@@ -87,21 +87,19 @@ export const Projects = ({ projects }: ProjectsProps) => {
       </h4>
 
       <div className="-mt-2 lg:flex lg:flex-wrap lg:-mx-6 mb-7">
-        {projects.map((project, idx) => {
-          return (
-            <div key={idx} className="mt-12 lg:w-1/2 lg:px-6">
-              <Project
-                project={{
-                  name: project.title,
-                  description: project.description,
-                  image: `/${project.image}`,
-                  url: project.href,
-                }}
-                color={DARK_COLORS[idx]}
-              />
-            </div>
-          );
-        })}
+        {projects?.map((project, idx) => (
+          <div key={idx} className="mt-12 lg:w-1/2 lg:px-6">
+            <Project
+              project={{
+                name: project.title,
+                description: project.description,
+                image: `/${project.image}`,
+                url: project.href,
+              }}
+              color={DARK_COLORS[idx]}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
