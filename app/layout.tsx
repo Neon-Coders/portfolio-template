@@ -5,6 +5,7 @@ import { navConfig } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,7 +58,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <MainNav items={navConfig.mainLink} />
           </div>
         </header>
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          {children}
+          <Analytics />
+        </main>
         <Footer items={footerConfig.mainLink} />
       </body>
     </html>
