@@ -127,7 +127,7 @@ export default function Home() {
             View GitHub
           </Link>
           <Link
-            href=""
+            href="https://youtube.com/@ibrahimraimi_"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(buttonVariants({ size: "large", outline: true }))}
